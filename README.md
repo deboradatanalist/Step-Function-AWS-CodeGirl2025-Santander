@@ -16,7 +16,7 @@ Após o deploy e implementação da função podemos editar e adicionar outra in
 ![Code](imagens/workflow.png)
 Figura 2 - Code do Step Function
 
-### Lambda
+## Lambda
 O AWS Lambda é um serviço de computação serverless que permite rodar código sem precisar se preocupar com servidores. Faz o upload do seu código (como uma função em Python, Node.js ou Java), e a AWS cuida de todo o resto: o provisionamento dos servidores, a execução do código e o escalonamento.
 
 O Lambda é a execução "orientada a eventos" (event-driven), o código só é executado em resposta a um trigger (gatilho).
@@ -24,7 +24,7 @@ O Lambda é a execução "orientada a eventos" (event-driven), o código só é 
 ![Lambda Criado pela Step Function](imagens/lambda.png)
 Figura 3 - Função Lambda Criada pelo serviço Step Function
 
-### DynamoBD 
+## DynamoBD 
 O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado pela AWS. Ele foi projetado para aplicações que precisam de performance em escala, oferecendo latência de milissegundos para qualquer volume de tráfego.
 
 Ele é um banco de dados que não usa tabelas rígidas como o Excel. Em vez disso, ele armazena dados em itens, onde cada item é composto por pares de chave:valor, tornando-o extremamente flexível e rápido.
@@ -32,7 +32,7 @@ Ele é um banco de dados que não usa tabelas rígidas como o Excel. Em vez diss
 ![Banco de Dados dynamoDB](imagens/dnamoDB.png)
 Figura 4 - Banco de Dados DynamoDB 
 
-### Amazon SQS
+## Amazon SQS
 O Amazon SQS (Simple Queue Service) é um serviço de filas de mensagens totalmente gerenciado que permite desacoplar e dimensionar microsserviços, sistemas distribuídos e aplicativos serverless. Ele trabalha com 2 tipo de fila
 * Filas Standard: O tipo padrão, com alto volume de mensagens e entrega "pelo menos uma vez". A ordem das mensagens não é garantida.
 
