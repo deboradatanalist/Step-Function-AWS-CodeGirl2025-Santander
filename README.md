@@ -1,8 +1,20 @@
 # Projeto AWS Step Function
 
 ## Step Function
-AWS Step Functions é um serviço que permite coordenar múltiplos serviços da AWS em um workflow serverless. É como um organizador visual para os componentes da sua aplicação. Em vez de escrever código para gerenciar lógicas complexas, é definido uma máquina de estados que orquestra o fluxo da sua aplicação. Pode-se arrastar e soltar etapas, como uma função Lambda, uma tarefa no ECS ou um trabalho no Glue, e o Step Functions vai gerenciar todo o processo, incluindo monitorar o progresso, tratar falhas e fornecer logs detalhados para cada etapa.
-Se os serviços que serão utilizados no projeto escolhido não estiverem ativos esse serviço os criam e inicializam eles de forma automatica.
+AWS Step Functions é um serviço que permite coordenar múltiplos serviços da AWS em um workflow serverless. 
+É como um organizador visual para os componentes da sua aplicação. Em vez de escrever código para gerenciar lógicas complexas, é definido uma máquina de estados que orquestra o fluxo da sua aplicação. Pode-se arrastar e soltar etapas, como uma função Lambda, uma tarefa no ECS ou um trabalho no Glue, e o Step Functions vai gerenciar todo o processo, incluindo monitorar o progresso, tratar falhas e fornecer logs detalhados para cada etapa.
+Se os serviços que serão utilizados no projeto escolhido não estiverem ativos esse serviço os criam e inicializam eles de forma automática.
+
+### Principais Caracteristícas 
+ * Low Code: É um serviço com uma abordagem de desenvolvimento que permite a criação de aplicações com o mínimo de código manual.
+   
+ * Visualização: O console do AWS Step Functions fornece um fluxograma visual que torna fácil entender, auditar e depurar o fluxo da sua aplicação, mesmo que ele seja complexo.
+
+ * Serverless: Você não precisa gerenciar nenhum servidor para o Step Functions em si. A AWS cuida de toda a infraestrutura subjacente, e você paga apenas pela transição de estado.
+
+ * Desenvolvimento Mais Rápido: Ele reduz drasticamente a quantidade de código que você precisa escrever para gerenciar o fluxo de trabalho da sua aplicação, economizando tempo e esforço.
+
+ * Integração N ativa: Ele se integra perfeitamente com dezenas de outros serviços da AWS, como Lambda, EC2, SQS, SNS e DynamoDB.
 
 ## Projeto
 Escolhi este projeto que mostra a construção de um workflow utilizando o Step Function na AWS que usa a função Lambda para preencher a tabela DynamoDB. A máquina de estado também usa um loop for para ler cada uma das entradas e, em seguida, envia cada entrada para uma fila Amazon SQS.
