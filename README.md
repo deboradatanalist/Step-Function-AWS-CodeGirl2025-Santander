@@ -17,7 +17,7 @@ O Lambda é a execução "orientada a eventos" (event-driven), o código só é 
 
 ![Lambda Criado pela step Function](imagens/lambda.png)
 
-### DynamoBD
+### DynamoBD 
 O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado pela AWS. Ele foi projetado para aplicações que precisam de performance em escala, oferecendo latência de milissegundos para qualquer volume de tráfego.
 
 Ele é um banco de dados que não usa tabelas rígidas como o Excel. Em vez disso, ele armazena dados em itens, onde cada item é composto por pares de chave:valor, tornando-o extremamente flexível e rápido.
