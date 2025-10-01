@@ -7,7 +7,7 @@ Se os serviços que serão utilizados no projeto escolhido não estiverem ativos
 ## Projeto
 Escolhi este projeto que mostra a construção de um workflow utilizando o Step Function na AWS para transferir registros de dados com Lambda, DynamoDB e Amazon SQS.
 onde o Lambda, DynamoDB e o amazon SQS não estavam criados e foram iniciados automaticamente pelo step function.
-[Step Funtion](step function.png)
+[Step Funtion] (step function.png)
 
 ### Lambda
 O AWS Lambda é um serviço de computação serverless que permite rodar código sem precisar se preocupar com servidores. Faz o upload do seu código (como uma função em Python, Node.js ou Java), e a AWS cuida de todo o resto: o provisionamento dos servidores, a execução do código e o escalonamento.
