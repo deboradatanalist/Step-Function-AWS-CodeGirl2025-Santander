@@ -6,9 +6,15 @@ Se os serviços que serão utilizados no projeto escolhido não estiverem ativos
 
 ## Projeto
 Escolhi este projeto que mostra a construção de um workflow utilizando o Step Function na AWS que usa a função Lambda para preencher a tabela DynamoDB. A máquina de estado também usa um loop for para ler cada uma das entradas e, em seguida, envia cada entrada para uma fila Amazon SQS.
-Neste caso o Lambda, DynamoDB e o amazon SQS não estavam criados e foram iniciados automaticamente pelo step function. 
+Neste caso o Lambda, DynamoDB e o Amazon SQS não estavam criados e foram iniciados automaticamente pelo step function. 
 
 ![Step Function](imagens/stepfunction.png)
+Figura 1 - Mostra o funcionamento do Step Function e todas as suas instâncias
+
+Após o deploy e implementação da função podemos editar e adicionar outra instância caso necessário como mostra a figura abaixo.
+
+![Code](imagens/workflow.png)
+Figura 2 - Code do Step Function
 
 ### Lambda
 O AWS Lambda é um serviço de computação serverless que permite rodar código sem precisar se preocupar com servidores. Faz o upload do seu código (como uma função em Python, Node.js ou Java), e a AWS cuida de todo o resto: o provisionamento dos servidores, a execução do código e o escalonamento.
@@ -16,6 +22,7 @@ O AWS Lambda é um serviço de computação serverless que permite rodar código
 O Lambda é a execução "orientada a eventos" (event-driven), o código só é executado em resposta a um trigger (gatilho).
 
 ![Lambda Criado pela Step Function](imagens/lambda.png)
+Figura 3 - Função Lambda Criada pelo serviço Step Function
 
 ### DynamoBD 
 O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado pela AWS. Ele foi projetado para aplicações que precisam de performance em escala, oferecendo latência de milissegundos para qualquer volume de tráfego.
@@ -23,6 +30,7 @@ O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado p
 Ele é um banco de dados que não usa tabelas rígidas como o Excel. Em vez disso, ele armazena dados em itens, onde cada item é composto por pares de chave:valor, tornando-o extremamente flexível e rápido.
 
 ![Banco de Dados dynamoDB](imagens/dnamoDB.png)
+Figura 4 - Banco de Dados DynamoDB 
 
 ### Amazon SQS
 O Amazon SQS (Simple Queue Service) é um serviço de filas de mensagens totalmente gerenciado que permite desacoplar e dimensionar microsserviços, sistemas distribuídos e aplicativos serverless. Ele trabalha com 2 tipo de fila
@@ -31,7 +39,8 @@ O Amazon SQS (Simple Queue Service) é um serviço de filas de mensagens totalme
 * Filas FIFO (First-In, First-Out): Garantem que as mensagens sejam processadas na ordem exata em que foram enviadas e entregues "exatamente uma vez". Isso é ideal para casos onde a ordem é crítica.
 usado principalmente para fornecer dados entre aplicativos.
 
-![Aazon SQS](imagens/SQS.png) 
+![Amazon SQS](imagens/SQS.png) 
+Figura 5 - Amazon SQS 
 
 
 
