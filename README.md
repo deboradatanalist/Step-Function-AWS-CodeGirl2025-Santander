@@ -15,7 +15,7 @@ O AWS Lambda é um serviço de computação serverless que permite rodar código
 
 O Lambda é a execução "orientada a eventos" (event-driven), o código só é executado em resposta a um trigger (gatilho).
 
-![Lambda Criado pela step Function](imagens/lambda.png)
+![Lambda Criado pela Step Function](imagens/lambda.png)
 
 ### DynamoBD 
 O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado pela AWS. Ele foi projetado para aplicações que precisam de performance em escala, oferecendo latência de milissegundos para qualquer volume de tráfego.
