@@ -1,8 +1,58 @@
 # Projeto AWS Step Function
 
-Este projeto mostra a construção de um workflow utilizando o Step Function na AWS para transferir registros de dados com Lambda, DynamoDB e Amazon SQS.
-
 ## Step Function
-AWS Step Functions é um serviço que permite coordenar múltiplos serviços da AWS em um workflow serverless. É como um organizador visual para os componentes da sua aplicação. Em vez de escrever código para gerenciar lógicas complexas, é definido uma máquina de estados que orquestra o fluxo da sua aplicação. Pode-se arrastar e soltar etapas, como uma função Lambda, uma tarefa no ECS ou um trabalho no Glue, e o Step Functions vai gerenciar todo o processo, incluindo monitorar o progresso, tratar falhas e fornecer logs detalhados para cada etapa.
-Se os serviços que serão utilizados no projeto escolhido não estiverem ativos esse serviço os criam e inicializam eles de forma automatica.
+AWS Step Functions é um serviço que permite coordenar múltiplos serviços da AWS em um workflow serverless. 
+É como um organizador visual para os componentes da sua aplicação. Em vez de escrever código para gerenciar lógicas complexas, é definido uma máquina de estados que orquestra o fluxo da sua aplicação. Pode-se arrastar e soltar etapas, como uma função Lambda, uma tarefa no ECS ou um trabalho no Glue, e o Step Functions vai gerenciar todo o processo, incluindo monitorar o progresso, tratar falhas e fornecer logs detalhados para cada etapa.
+Se os serviços que serão utilizados no projeto escolhido não estiverem ativos esse serviço os criam e inicializam eles de forma automática.
+
+### Principais Caracteristícas 
+ * Low Code: É um serviço com uma abordagem de desenvolvimento que permite a criação de aplicações com o mínimo de código manual.
+   
+ * Visualização: O console do AWS Step Functions fornece um fluxograma visual que torna fácil entender, auditar e depurar o fluxo da sua aplicação, mesmo que ele seja complexo.
+
+ * Serverless: Você não precisa gerenciar nenhum servidor para o Step Functions em si. A AWS cuida de toda a infraestrutura subjacente, e você paga apenas pela transição de estado.
+
+ * Desenvolvimento Mais Rápido: Ele reduz drasticamente a quantidade de código que você precisa escrever para gerenciar o fluxo de trabalho da sua aplicação, economizando tempo e esforço.
+
+ * Integração N ativa: Ele se integra perfeitamente com dezenas de outros serviços da AWS, como Lambda, EC2, SQS, SNS e DynamoDB.
+
+## Projeto
+Escolhi este projeto que mostra a construção de um workflow utilizando o Step Function na AWS que usa a função Lambda para preencher a tabela DynamoDB. A máquina de estado também usa um loop for para ler cada uma das entradas e, em seguida, envia cada entrada para uma fila Amazon SQS.
+Neste caso o Lambda, DynamoDB e o Amazon SQS não estavam criados e foram iniciados automaticamente pelo step function. 
+
+![Step Function](imagens/stepfunction.png)
+Figura 1 - Mostra o funcionamento do Step Function e todas as suas instâncias
+
+Após o deploy e implementação da função podemos editar e adicionar outra instância caso necessário como mostra a figura abaixo.
+
+![Code](imagens/workflow.png)
+Figura 2 - Code do Step Function
+
+## Lambda
+O AWS Lambda é um serviço de computação serverless que permite rodar código sem precisar se preocupar com servidores. Faz o upload do seu código (como uma função em Python, Node.js ou Java), e a AWS cuida de todo o resto: o provisionamento dos servidores, a execução do código e o escalonamento.
+
+O Lambda é a execução "orientada a eventos" (event-driven), o código só é executado em resposta a um trigger (gatilho).
+
+![Lambda Criado pela Step Function](imagens/lambda.png)
+Figura 3 - Função Lambda Criada pelo serviço Step Function
+
+## DynamoBD 
+O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado pela AWS. Ele foi projetado para aplicações que precisam de performance em escala, oferecendo latência de milissegundos para qualquer volume de tráfego.
+
+Ele é um banco de dados que não usa tabelas rígidas como o Excel. Em vez disso, ele armazena dados em itens, onde cada item é composto por pares de chave:valor, tornando-o extremamente flexível e rápido.
+
+![Banco de Dados dynamoDB](imagens/dnamoDB.png)
+Figura 4 - Banco de Dados DynamoDB 
+
+## Amazon SQS
+O Amazon SQS (Simple Queue Service) é um serviço de filas de mensagens totalmente gerenciado que permite desacoplar e dimensionar microsserviços, sistemas distribuídos e aplicativos serverless. Ele trabalha com 2 tipo de fila
+* Filas Standard: O tipo padrão, com alto volume de mensagens e entrega "pelo menos uma vez". A ordem das mensagens não é garantida.
+
+* Filas FIFO (First-In, First-Out): Garantem que as mensagens sejam processadas na ordem exata em que foram enviadas e entregues "exatamente uma vez". Isso é ideal para casos onde a ordem é crítica.
+usado principalmente para fornecer dados entre aplicativos.
+
+![Amazon SQS](imagens/SQS.png) 
+Figura 5 - Amazon SQS 
+
+
 
